@@ -1,0 +1,47 @@
+.banner-img {
+  width: 50%;
+  height: 100%;
+}
+.aside {
+  width: 50%;
+  height: 350px;
+  padding: 250px 99px 0px 99px;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.name {
+  font-size: 43px;
+  text-align: left;
+}
+.name p {
+  color: red;
+  display: inline-block;
+}
+h2 {
+  font-size: 21px;
+  text-align: left;
+}
+.lineUp {
+  font-size: 16px;
+  padding: 18px 119px 0px 0px;
+  animation: 8s anim-lineUp ease-out infinite;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

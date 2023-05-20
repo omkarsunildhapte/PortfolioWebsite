@@ -1,0 +1,10 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background: #000000;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}

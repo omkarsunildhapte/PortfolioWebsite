@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="col-3">
+        <div class="photo">
+
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="section">
+            <span>About Me</span>
+            <p>
+                Omkar Sunil Dhapte is a skilled Full Stack Developer with experience in building web applications. He is
+                proficient in web technologies and has worked on various projects such as data science and machine
+                learning-based house price prediction, online banking systems, and music player websites. Omkar has
+                completed a Full Stack Developer Diploma and has experience as an intern at Extentia. He is a quick
+                learner,
+                an honest team player, and has a passion for gaming and video editing.
+            </p>
+        </div>
+        <div class="about">
+            <div class="about-list">
+                <div class="menu">
+                    <a (click)="showSkills = true; showExperience = false; showEducation = false;">Skills</a>
+                    <a (click)="showExperience = true; showSkills = false; showEducation = false;">Experience</a>
+                    <a (click)="showEducation = true; showSkills = false; showExperience = false;">Education</a>
+                </div>
+                <div class="menu-item">
+                    <ul *ngIf="showSkills">
+                        <li *ngFor="let skill of skills">
+                            {{ skill.name }}
+                            <p>{{ skill.description }}</p>
+                        </li>
+                    </ul>
+
+                    <ul *ngIf="showExperience">
+                        <li *ngFor="let exp of experience">
+                            {{ exp.date }}
+                            <p>{{ exp.details }}</p>
+                        </li>
+                    </ul>
+
+                    <ul *ngIf="showEducation">
+                        <li *ngFor="let edu of education">
+                            {{ edu.date }}
+                            <p>{{ edu.details }}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

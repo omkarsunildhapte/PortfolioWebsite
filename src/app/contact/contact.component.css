@@ -8,9 +8,8 @@
   text-align: center;
 }
 .header {
-  padding: 20px 120px;
   font-size: 24px;
-  text-align: left;
+  text-align: center;
 }
 .contact {
   text-align: left;
@@ -36,16 +35,26 @@ ul {
   font-size: 20px;
   color: gray;
 }
-.col-4 a {
+.contact ul li a {
+  color: gray;
+}
+.contact ul li a:hover {
+  opacity: 1;
+  color: grey;
+}
+.button a {
   background-color: red;
   text-align: center;
   text-decoration: none;
   border: 1px solid red;
   color: #fff;
   padding: 12px 18px;
-  margin-right: 35%;
   border-radius: 10px;
   transition: opacity 0.2s linear;
+}
+.button {
+  display: flex;
+  justify-content: space-around;
 }
 .contact a:hover {
   opacity: 0.2;

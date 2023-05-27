@@ -3,7 +3,7 @@
   padding: 10px 140px;
 }
 .col-3 {
-  width: 30%;
+  width: 35%;
   height: 500px;
   padding: 30px 10px 20px 10px;
 }
@@ -83,4 +83,6 @@ ul {
   padding-top: 10px;
   text-align: left;
   font-size: 16px;
+}
+@media screen and (max-width: 480px) {
 }

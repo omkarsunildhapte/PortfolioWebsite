@@ -1,88 +1,54 @@
-.container {
-  display: flex;
-  padding: 10px 140px;
-}
-.col-3 {
-  width: 35%;
-  height: 500px;
-  padding: 30px 10px 20px 10px;
-}
-.col-9 {
-  width: 70%;
-  background: #000;
-  height: 500px;
-  padding: 35px 45px;
-}
-.col-9 span {
-  font-size: 33px;
-  font-weight: 700;
-}
-.photo {
-  background: #6d6b6b;
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px auto;
-  border-radius: 12px;
-  box-sizing: border-box;
-}
-.section p {
-  padding: 10px 0px;
-}
-.about-list {
-  list-style: none;
-}
-.about-list a {
-  float: left;
-  padding: 18px 24px;
-  font-size: 18px;
-}
-ul {
-  list-style: none;
-  text-align: center;
-}
-.about-list a ul {
-  text-align: left;
-}
-.about-list a ul li {
-  padding-top: 20px;
-  color: aqua;
-  text-align: left;
-  font-size: 14px;
-}
-.about-list a ul li p {
-  padding-top: 10px;
-  text-align: left;
-  font-size: 16px;
-  color: #fff;
-}
-.menu {
-  width: 100%;
-  display: flex;
-  justify-content: start;
-}
-.menu a {
-  border-bottom: none;
-  transition: border linear 0.2s;
-}
-.menu a:hover {
-  border-bottom: 2px solid red;
-}
-.menu-item {
-  display: flex;
-}
 
-.menu-item ul li {
-  color: red;
-  padding-top: 20px;
-  text-align: left;
-  font-size: 14px;
+.tesl a {
+  font-size: 18px;
+ }  
+ .tesl a:hover{
+  border-bottom: 4px solid red !important;
 }
-.menu-item ul li p {
-  color: #fff;
-  padding-top: 10px;
-  text-align: left;
-  font-size: 16px;
+.tesl a:active {
+  border-bottom: 4px solid red !important;
 }
-@media screen and (max-width: 480px) {
+span {
+  font-size: 33px;
+}
+/* Mobile view styles */
+@media (max-width: 767px) {
+  .mobile-view {
+    flex-direction: column;
+  }
+
+  .mobile-view .col-5 {
+    order: 2;
+    width: 100%;
+  }
+
+  .mobile-view .col-7 {
+    order: 1;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+.mobile-view img{
+  width: 100vw;
+  display: block;
+}
+  .mobile-view .text-center {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .mobile-view .list-unstyled {
+    padding: 0;
+  }
+
+  .mobile-view .tesl {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .mobile-view ul li {
+    text-align: center;
+    color: red;
+    font-size: 14px;
+  }
 }

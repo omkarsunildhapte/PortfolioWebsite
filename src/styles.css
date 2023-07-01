@@ -7,4 +7,5 @@ body {
   background: #000000;
   color: #fff;
   font-family: "Times New Roman", Times, serif;
+  background-image: linear-gradient(to right top, #568cdd, #6c80e3, #8b6fe1, #ad57d7, #cd2fc2);
 }

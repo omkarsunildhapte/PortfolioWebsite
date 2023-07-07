@@ -1,12 +1,7 @@
-.test{
-  font-size: 43px;
-}
-h2 {
-  font-size: 21px;
-}
+
 .lineUp {
   font-size: 16px;
-  animation: 8s anim-lineUp ease-out 1;
+  animation: 8s anim-lineUp ease-out infinite;
 }
 @keyframes anim-lineUp {
   0% {
@@ -24,10 +19,6 @@ h2 {
     opacity: 1;
     transform: translateY(0%);
   }
-}
-.span-container {
-  width: 150px;
-  height: 150px;
 }
 
 span {

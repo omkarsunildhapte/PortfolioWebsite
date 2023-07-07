@@ -1,5 +1,9 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
+.border-red {
+  border-left: 3px solid red !important;
+}
+
 .contact {
   padding: 20px 49px;
 }

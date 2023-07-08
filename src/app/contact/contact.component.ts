@@ -45,7 +45,7 @@ export class ContactComponent {
       this.sendData(formData);
       // this.emailService.sendEmail(formData).subscribe(
       //   () => {
-      //     this.toastr.success('Email sent successfully!', 'Success');
+      //       this.toastr.success('Email sent successfully!', 'Success');
       //   },
       //   (error) => {
       //     this.toastr.error('Failed to send email', 'Error');

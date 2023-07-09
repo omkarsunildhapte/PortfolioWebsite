@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 @Component({
   selector: 'app-firstpage',
@@ -6,12 +6,6 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./firstpage.component.css']
 })
 export class FirstpageComponent {
-  @ViewChild('sidenav')
-  sidenav!: MatSidenav;
-
-  toggleSidenav() {
-    this.sidenav.toggle();
-  }
   ngOnInit(): void {
     const scrollToSection = (event: Event) => {
       event.preventDefault();
@@ -28,4 +22,8 @@ export class FirstpageComponent {
     });
   }
 
+  toggleMenu(): void {
+    const menuContainer = document.getElementById('menuContainer');
+    menuContainer?.classList.toggle('open');
+  }
 }

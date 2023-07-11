@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./firstpage.component.css']
 })
 export class FirstpageComponent {
+  mobileNav: boolean = false;
   ngOnInit(): void {
     const scrollToSection = (event: Event) => {
       event.preventDefault();
@@ -23,7 +24,6 @@ export class FirstpageComponent {
   }
 
   toggleMenu(): void {
-    const menuContainer = document.getElementById('menuContainer');
-    menuContainer?.classList.toggle('open');
+    this.mobileNav = !this.mobileNav;
   }
 }

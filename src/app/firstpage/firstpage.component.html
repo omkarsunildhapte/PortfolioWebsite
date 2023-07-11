@@ -1,16 +1,16 @@
-<div class="w-100 position-fixed z-1" style="background: #9914d8">
-  <div class="container-fluid d-flex px-5 align-items-center position-relative">
-    <div class="p-2 px-4 col-3" [ngClass]="{'d-none' : mobileNav}">
+<div class="" style="background: #9914d8">
+  <div class="container-fluid d-flex px-5 py-2 align-items-center">
+    <div class="p-2 px-4 col" [ngClass]="{'d-none' : mobileNav}">
       <span class="animate-charcter fw-bold">Omkar</span>
     </div>
-    <div class="d-flex col-9 justify-content-end  icon" [ngClass]="{'d-none' : mobileNav}">
-      <button class="bg-transparent border-0" (click)="toggleMenu()">
+    <div class="col justify-content-end icon" [ngClass]="{'icon' : !mobileNav , 'icon1 ' : mobileNav}">
+      <button class="bg-transparent border-0 text-white" (click)="toggleMenu()">
         <mat-icon>list</mat-icon>
       </button>
     </div>
-    <div class="col-9 justify-content-end desktop-menu" [ngClass]="{'mobile-menu ' : mobileNav}">
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        (click)="toggleMenu()"><mat-icon>clear</mat-icon>
+    <div class="col justify-content-end desktop-menu" [ngClass]="{'mobile-menu ' : mobileNav}">
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600 icon" (click)="toggleMenu()"
+        [ngClass]="{'icon' : !mobileNav}"><mat-icon>clear</mat-icon>
       </a>
       <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
         data-scroll-to="app-home">Home</a>

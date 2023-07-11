@@ -1,13 +1,13 @@
 export const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: "AIzaSyC77ed_7DoMx7V176XNWGNJG3W_nAjFFTU",
-        authDomain: "ang-fire-25617.firebaseapp.com",
-        databaseURL: "https://ang-fire-25617-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "ang-fire-25617",
-        storageBucket: "ang-fire-25617.appspot.com",
-        messagingSenderId: "862776018622",
-        appId: "1:862776018622:web:b2ba44325db40f196fc0ef",
-        measurementId: "G-703S0E17KM"
+        apiKey: "AIzaSyDsuqN-Fp1OoxfOh8BWJPkdVgfsCb3kCGo",
+        authDomain: "portfoliowebsite-ddc10.firebaseapp.com",
+        databaseURL: "https://portfoliowebsite-ddc10-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "portfoliowebsite-ddc10",
+        storageBucket: "portfoliowebsite-ddc10.appspot.com",
+        messagingSenderId: "339438348974",
+        appId: "1:339438348974:web:b955334c5f5f875fc55b3f",
+        measurementId: "G-WRGYL7HHNR"
     }
 }

@@ -1,4 +1,6 @@
-
+.animation {
+  padding-left: 50%;
+}
 .lineUp {
   font-size: 16px;
   animation: 8s anim-lineUp ease-out infinite;
@@ -71,22 +73,23 @@ span {
 }
 
 @media screen and (max-width: 850px) {
-  .span-container {
-    left: 28%;
-    top: 9%;
-    width: 100px;
-    height: 100px;
+  .animation {
+    position: absolute;
+    top: 24%;
+    left: 34%;
+    padding: 0%;
   }
-  .test{
+  .test {
     font-size: 22px;
   }
-  .container {
-    display: block;
-    height: 500px;
-  }
-  .aside {
-    width: 100%;
+  .text-animation {
     position: absolute;
+    bottom: 21%;
+    left: 0;
+  }
+  .text-animation h1,
+  .text-animation p {
+    padding: 10px 0px;
   }
   .aside h2 {
     font-size: 29px;

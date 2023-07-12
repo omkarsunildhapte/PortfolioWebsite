@@ -1,5 +1,4 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
-
 .border-red {
   border-left: 3px solid red !important;
 }
@@ -56,6 +55,6 @@ ul {
   opacity: 0.2;
 }
 .col-6 form input:hover {
- border:none;
- outline:none;
+  border: none;
+  outline: none;
 }

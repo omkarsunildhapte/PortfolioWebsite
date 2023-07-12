@@ -12,16 +12,16 @@
       <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600 icon" (click)="toggleMenu()"
         [ngClass]="{'icon' : !mobileNav}"><mat-icon>clear</mat-icon>
       </a>
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        data-scroll-to="app-home">Home</a>
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        data-scroll-to="app-about">About</a>
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        data-scroll-to="app-services">Services</a>
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        data-scroll-to="app-projects">Projects</a>
-      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600"
-        data-scroll-to="app-contact">Contact</a>
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600" data-scroll-to="app-home"
+        (click)="toggleMenu()">Home</a>
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600" data-scroll-to="app-about"
+        (click)="toggleMenu()">About</a>
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600" data-scroll-to="app-services"
+        (click)="toggleMenu()">Services</a>
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600" data-scroll-to="app-projects"
+        (click)="toggleMenu()">Projects</a>
+      <a class="px-3 py-2 text-decoration-none text-center fw-bold text-white fs-8 fw-600" data-scroll-to="app-contact"
+        (click)="toggleMenu()">Contact</a>
     </div>
 
   </div>

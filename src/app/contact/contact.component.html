@@ -1,69 +1,75 @@
 <div class="header text-center">
     <h1 class="fw-bolder " style="font-size: 24px;">Contact Me</h1>
 </div>
-<div class="container-xl d-flex" id="app-contact">
-    <div class="col-5">
-        <div class="px-2 py-2 d-flex flex-column ">
-            <div class="px-3 py-5">
-                <p style="font-size: 16px;" (click)="openEmailClient('dhapteomkar38@gmail.com')"><i
-                        class="fa-solid fa-envelope px-2 d-inline "></i>dhapteomkar38@gmail.com</p>
-                <p style="font-size: 16px;" (click)="openPhoneDialer('8530842830')"><i
-                        class="fa-solid fa-phone px-2 d-inline "></i>8530842830
-                </p>
-                <ul class="d-flex px-2 py-5 ">
-                    <li class="px-3">
-                        <a class="text-white" href="https://www.facebook.com/omkar.dhapte.31/" target="_blank">
-                            <i style="font-size: 24px;" class="fa-brands fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="px-3">
-                        <a class="text-white" href="https://linkedin.com/in/omkar-dhapte-103380226" target="_blank">
-                            <i style="font-size: 24px;" class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <!-- <li class="px-3">
-                        <a class="text-white" href="https://linkedin.com/in/omkar-dhapte-103380226" target="_blank">
-                            <i style="font-size: 24px;" class="fa-brands fa-square-instagram"></i>
-                        </a>
-                    </li> -->
-                    <li class="px-3">
-                        <a class="text-white" href="https://twitter.com/dhapte55187" target="_blank">
-                            <i style="font-size: 24px;" class="fa-brands fa-twitter"></i>
-                        </a>
-                    </li>
-                </ul>
-                <div class="button d-flex mx-4">
-                    <a href="../assets/resume.docx" target="_blank">Download CV</a>
+<div class="container-fluid d-flex justify-content-center py-5" id="app-contact">
+    <div class="container d-flex justify-content-between">
+        <div class="row">
+            <div class="col pb-3">
+                <div class="py-2 d-flex justify-content-center">
+                    <div class="">
+                        <div class="col">
+                            <div class="d-flex justify-content-center flex-column">
+                                <p style="font-size: 16px;" class="py-3"
+                                    (click)="openEmailClient('dhapteomkar38@gmail.com')"><i
+                                        class="fa-solid fa-envelope d-inline px-2"></i>dhapteomkar38@gmail.com</p>
+                                <p style="font-size: 16px;" (click)="openPhoneDialer('8530842830')"><i
+                                        class="fa-solid fa-phone d-inline px-2"></i>8530842830
+                                </p>
+                            </div>
+                            <ul class="d-flex px-2 py-5 ">
+                                <li class="px-3">
+                                    <a class="text-white" href="https://www.facebook.com/omkar.dhapte.31/"
+                                        target="_blank">
+                                        <i style="font-size: 24px;" class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="px-3">
+                                    <a class="text-white" href="https://linkedin.com/in/omkar-dhapte-103380226"
+                                        target="_blank">
+                                        <i style="font-size: 24px;" class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="px-3">
+                                    <a class="text-white" href="https://twitter.com/dhapte55187" target="_blank">
+                                        <i style="font-size: 24px;" class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <a class="text-decoration-none text-white p-2 rounded-3" style="background: red;"
+                                href="../assets/resume.docx" target="_blank">Download CV</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="col">
+                <form class="px-5 py-3" [formGroup]="form" (ngSubmit)="submitForm()">
+                    <input style="width:100%" formControlName="name"
+                        class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0"
+                        type="text" placeholder="Your Name">
+
+                    <input style="width:100%" formControlName="email"
+                        class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0"
+                        type="text" placeholder="Your Email">
+
+                    <input style="width:100%" formControlName="companyName"
+                        class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0"
+                        type="text" placeholder="Your Company Name">
+
+                    <input style="width:100%" formControlName="phoneNumber"
+                        class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0"
+                        type="text" placeholder="Your Mobile Number">
+
+                    <input style="width:100%" formControlName="message"
+                        class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0"
+                        type="text" placeholder="Your Message">
+
+                    <div class="d-flex align-items-center justify-content-center pt-4">
+                        <button class="text-white rounded-3 border-0 mt-2 mb-3 py-2 px-5" style="background: red;"
+                            type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="col-7 px-5">
-        <form class="px-2 py-3" [formGroup]="form" (ngSubmit)="submitForm()">
-            <input style="width:100%" formControlName="name"
-                class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0" type="text"
-                placeholder="Your Name">
-
-            <input style="width:100%" formControlName="email"
-                class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0" type="text"
-                placeholder="Your Email">
-
-            <input style="width:100%" formControlName="companyName"
-                class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0" type="text"
-                placeholder="Your Company Name">
-
-            <input style="width:100%" formControlName="phoneNumber"
-                class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0" type="text"
-                placeholder="Your Mobile Number">
-
-            <input style="width:100%" formControlName="message"
-                class="w-100 text-center py-2 py-1 mb-3 border-0 rounded-2 text-dark opacity-75 outline-0" type="text"
-                placeholder="Your Message">
-
-            <div class="d-flex align-items-center justify-content-center pt-4">
-                <button class="text-white rounded-3 border-0 mt-2 mb-3 py-2 px-5" style="background: red;"
-                    type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>

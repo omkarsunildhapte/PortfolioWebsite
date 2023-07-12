@@ -1,20 +1,5 @@
-@import "~@fortawesome/fontawesome-free/css/all.css";
-
-.chip:hover .overlay {
-  opacity: 0.8;
-  visibility: visible;
-  transition-delay: 0s;
+@media (max-width: 800px) {
+  .chip {
+    margin-bottom: 15px !important;
+  }
 }
-.overlay {
-  background-color: red;
-  transition: opacity 1.8s ease, visibility 0s linear 1.8s;
-  opacity: 0;
-  visibility: hidden;
-}
-.btn {
-  transition: background-color 0.2s ease;
-}
-.btn:hover {
-  background-color: red !important;
-}
-

@@ -29,14 +29,18 @@ a:hover {
 
 /* moblie view */
 .icon {
-  display: none;
+  display: none !important;
 }
 .desktop-menu {
   display: flex !important;
 }
 @media (max-width: 800px) {
   .icon {
-    display: block;
+    display: flex !important;
+    width: 50% !important;
+  }
+  .icon1 {
+    display: none !important;
   }
   .desktop-menu {
     display: none !important;
@@ -46,6 +50,5 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center !important;
-    width: 100% !important;
   }
 }

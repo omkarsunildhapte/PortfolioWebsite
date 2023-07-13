@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from './environment/environment';
+import { NumberOnlyDirective } from './comman/diectory/number-only.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { environment } from './environment/environment';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
+    NumberOnlyDirective,
   ],
   imports: [
     BrowserModule,

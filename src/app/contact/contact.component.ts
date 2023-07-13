@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailfeatureService } from '../comman/servies/emailFeatures/emailfeature.service';
 import { ToastrService } from 'ngx-toastr';
-import { DataService } from '../comman/dataStore/data.service';
+import { DataService } from '../comman/servies/dataStore/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +15,7 @@ export class ContactComponent {
   constructor(
     private formBuilder: FormBuilder,
     private emailService: EmailfeatureService,
-    private toastr: ToastrService,
+    private toaster: ToastrService,
     private fireData: DataService
   ) { }
 
@@ -43,25 +43,15 @@ export class ContactComponent {
     if (this.form.valid) {
       const formData = this.form.value;
       this.sendData(formData);
-      // this.emailService.sendEmail(formData).subscribe(
-      //   () => {
-      //       this.toastr.success('Email sent successfully!', 'Success');
-      //   },
-      //   (error) => {
-      //     this.toastr.error('Failed to send email', 'Error');
-      //   }
-      // );
+
     } else {
-      this.toastr.error('Please fill in all required fields.', 'Error');
+      this.toaster.error('Please fill in all required fields.', 'Error');
     }
   }
   sendData(data: any): void {
     this.fireData.addItem(data)
       .then(() => {
-        console.log('Item added successfully!');
+        this.toaster.success('Succesfully Data Send');
       })
-      .catch((error) => {
-        console.error('Error adding item:', error);
-      });
   }
 }

@@ -1,9 +1,16 @@
-.animation {
-  padding-left: 50%;
+#app-home {
+  background-image: url(../../assets/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
 .lineUp {
   font-size: 16px;
-  animation: 8s anim-lineUp ease-out infinite;
+  animation: 8s anim-lineUp ease-out 1;
+}
+.text-animation {
+  text-shadow: 4px 4px 4px #00000080;
 }
 @keyframes anim-lineUp {
   0% {
@@ -23,69 +30,9 @@
   }
 }
 
-span {
-  display: block;
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  border-radius: 50%;
-  animation: speed 2s infinite ease-in-out;
-}
-
-.one {
-  background: #c9ba12;
-  animation-delay: 1.5s;
-}
-
-.two {
-  background: #a11cc7;
-  animation-delay: 1s;
-}
-
-.three {
-  background: #237ead;
-  animation-delay: 0.5s;
-}
-
-.four {
-  background: greenyellow;
-}
-@keyframes speed {
-  0% {
-    transform: translate(0%);
-    border-radius: 50%;
-  }
-
-  25% {
-    transform: translate(150%) scale(0.5);
-    border-radius: 0%;
-  }
-
-  50% {
-    transform: translate(150%, 150%);
-    border-radius: 50%;
-  }
-
-  75% {
-    transform: translate(0, 150%) scale(0.5);
-    border-radius: 0%;
-  }
-}
-
 @media screen and (max-width: 850px) {
-  .animation {
-    position: absolute;
-    top: 24%;
-    left: 34%;
-    padding: 0%;
-  }
   .test {
     font-size: 22px;
-  }
-  .text-animation {
-    position: absolute;
-    bottom: 21%;
-    left: 0;
   }
   .text-animation h1,
   .text-animation p {

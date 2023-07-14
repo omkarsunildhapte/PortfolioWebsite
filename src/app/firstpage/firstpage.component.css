@@ -23,11 +23,14 @@
     background-position: 200% center;
   }
 }
+a {
+  transition: border 1s, color 1s;
+}
 a:hover {
+  color: #d61313 !important;
   border-bottom: 4px solid #d61313;
 }
 
-/* moblie view */
 .icon {
   display: none !important;
 }

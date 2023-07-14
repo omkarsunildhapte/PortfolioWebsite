@@ -6,14 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  showSkills = true;
-  showExperience = false;
+  showExperience = true;
   showEducation = false;
-  skills = [
-    { name: 'Web Development', description: 'Web App Development' },
-    { name: 'Back-end Development', description: 'Back-end App Development' },
-    { name: 'UI/UX', description: 'Designing Web/App Interfaces' }
-  ];
   experience = [
     { date: 'Apr 2023 - Current', details: 'Web Development at Scalar Techhub' },
     { date: 'Jun 2018 - Jul 2018', details: 'UI/UX Development at Extentia Information Technology' }

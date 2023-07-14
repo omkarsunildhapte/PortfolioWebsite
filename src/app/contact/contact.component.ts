@@ -34,7 +34,7 @@ export class ContactComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       companyName: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
+      phoneNumber: ['', [Validators.pattern('[0-9]{10}')]],
       message: ['']
     });
   }
@@ -43,15 +43,30 @@ export class ContactComponent {
     if (this.form.valid) {
       const formData = this.form.value;
       this.sendData(formData);
-
+      this.form.reset();
     } else {
       this.toaster.error('Please fill in all required fields.', 'Error');
+
+      Object.keys(this.form.controls).forEach((controlName) => {
+        const control = this.form.get(controlName)!;
+        if (control.invalid) {
+          const errorMessage = `Invalid ${controlName.replace(/_/g, ' ')}`;
+          this.toaster.error(errorMessage, 'Error');
+        }
+      });
+
+      this.form.reset();
     }
   }
   sendData(data: any): void {
     this.fireData.addItem(data)
       .then(() => {
-        this.toaster.success('Succesfully Data Send');
+        this.toaster.success('Successfully Data Sent');
       })
+      .catch((error) => {
+        this.toaster.error('Error sending data', 'Error');
+        console.error('Error sending data:', error);
+      });
   }
+
 }

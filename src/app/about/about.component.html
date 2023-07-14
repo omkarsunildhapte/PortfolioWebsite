@@ -1,16 +1,16 @@
-<div class="w-100 h-100" id="app-about">
+<div class="w-100 h-100 py-5" id="app-about">
     <div class="container-lg d-flex mobile-view">
         <div class="row">
-            <span class="py-5 text-center fw-bold d-block">About Me</span>
-            <div class="col overflow-hidden d-flex rounded-5">
-                <div class="text-center p-0 m-auto flex-shrink-1 rounded-5" style="background: #8613aa;">
-                    <img src="../assets/back.png" class="img-fluid w-100 h-100  rounded-5" alt="BANNER IS HERE">
+            <span class="py-5 text-center d-block">About Me</span>
+            <div class="col overflow-hidden d-flex">
+                <div class="text-center p-0 m-auto flex-shrink-1">
+                    <img src="../assets/back.png" class="img-fluid w-100 h-100" alt="BANNER IS HERE">
                 </div>
             </div>
-            <div class="col px-3">
+            <div class="col px-3 rounded-5" style="background-color:#67348d96">
                 <div class="row">
-                    <div class="d-flex justify-content-center ">
-                        <p class="py-4 px-4" style="font-size: 14px;">
+                    <div class="d-flex justify-content-center">
+                        <p class="py-4 px-4 font-bolder" style="font-size: 14px;">
                             Omkar Sunil Dhapte is a skilled Full Stack Developer with experience in building web
                             applications.
                             He is
@@ -30,31 +30,17 @@
                         <div class="px-4">
                             <div class="list-unstyled list-inline">
                                 <div class="d-flex justify-content-lg-start tesl">
-                                    <a class="p-0 px-3 fw-5 border-0 text-white text-decoration-none"
+                                    <a class="p-0 px-3 fw-5 border-0 text-decoration-none"
                                         style="transition: border 0.3s;"
-                                        (click)="showSkills = true; showExperience = false; showEducation = false;">Skills</a>
-                                    <a class="p-0 px-3 fw-5 border-0 text-white text-decoration-none"
+                                        (click)="showExperience = true;showEducation = false;">Experience</a>
+                                    <a class="p-0 px-3 fw-5 border-0 text-decoration-none"
                                         style="transition: border 0.3s;"
-                                        (click)="showExperience = true; showSkills = false; showEducation = false;">Experience</a>
-                                    <a class="p-0 px-3 fw-5 border-0 text-white text-decoration-none"
-                                        style="transition: border 0.3s;"
-                                        (click)="showEducation = true; showSkills = false; showExperience = false;">Education</a>
+                                        (click)="showEducation = true; showExperience = false;">Education</a>
                                 </div>
                                 <div class="d-flex">
-                                    <ul class="py-2 list-unstyled align-center dis" *ngIf="showSkills">
-                                        <li class="px-2 py-1 fw-bolder" style="font-size:14px; color:red"
-                                            *ngFor="let skill of skills">
-                                            {{ skill.name }}
-                                            <p class="px-2 py-1 text-white fw-lighter" style="font-size:16px;">{{
-                                                skill.description
-                                                }}
-                                            </p>
-                                        </li>
-                                    </ul>
-
                                     <ul class="py-2 list-unstyled align-center " *ngIf="showExperience">
                                         <li class="px-2 py-1  fw-bolder" style="font-size:14px; color:red"
-                                            *ngFor="let exp of experience">
+                                            *ngFor=" let exp of experience">
                                             {{ exp.date }}
                                             <p class="px-2 py-1 text-white fw-lighter " style="font-size:16px;">{{
                                                 exp.details
@@ -65,7 +51,7 @@
 
                                     <ul class="py-2 list-unstyled align-center " *ngIf="showEducation">
                                         <li class="px-2 py-1  fw-bolder" style="font-size:14px; color:red"
-                                            *ngFor="let edu of education">
+                                            *ngFor=" let edu of education">
                                             {{ edu.date }}
                                             <p class="px-2 py-1 text-white fw-lighter " style="font-size:16px;">{{
                                                 edu.details

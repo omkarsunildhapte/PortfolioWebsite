@@ -16,7 +16,7 @@ export class ContactComponent {
     private formBuilder: FormBuilder,
     private emailService: EmailfeatureService,
     private toaster: ToastrService,
-    private fireData: DataService
+    private fireData: DataService,
   ) { }
 
   openEmailClient(emailId: string): void {
@@ -43,9 +43,10 @@ export class ContactComponent {
     if (this.form.valid) {
       const formData = this.form.value;
       this.sendData(formData);
-
+      this.form.reset();
     } else {
       this.toaster.error('Please fill in all required fields.', 'Error');
+      this.form.reset();
     }
   }
   sendData(data: any): void {

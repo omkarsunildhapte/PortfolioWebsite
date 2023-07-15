@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from './comman/servies/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portfolio';
+  isLoading: boolean;
+
+  constructor(private loadingService: LoadingService) {
+    this.isLoading = false;
+  }
+
+  ngOnInit() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
+  }
 }

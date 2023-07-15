@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { BannerComponent } from './banner/banner.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ServiesComponent } from './servies/servies.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -21,19 +20,20 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from './environment/environment';
 import { NumberOnlyDirective } from './comman/diectory/number-only.directive';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstpageComponent,
     BannerComponent,
-    HomeComponent,
     AboutComponent,
     ServiesComponent,
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
     NumberOnlyDirective,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

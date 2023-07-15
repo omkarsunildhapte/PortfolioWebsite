@@ -2,4 +2,8 @@
   .chip {
     margin-bottom: 15px !important;
   }
+  .col {
+    flex: auto !important;
+    padding-bottom: 10%;
+  }
 }

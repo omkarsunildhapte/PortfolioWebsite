@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from '../comman/servies/loading.service';
 
 @Component({
   selector: 'app-projects',
@@ -6,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
-
 }

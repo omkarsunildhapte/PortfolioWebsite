@@ -33,9 +33,9 @@ export class ContactComponent {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      companyName: ['', Validators.required],
-      phoneNumber: ['', [Validators.pattern('[0-9]{10}')]],
-      message: ['']
+      companyName: ['',],
+      phoneNumber: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
+      message: ['', Validators.required]
     });
   }
 
@@ -45,13 +45,12 @@ export class ContactComponent {
       this.sendData(formData);
       this.form.reset();
     } else {
-      this.toaster.error('Please fill in all required fields.', 'Error');
 
       Object.keys(this.form.controls).forEach((controlName) => {
         const control = this.form.get(controlName)!;
         if (control.invalid) {
           const errorMessage = `Invalid ${controlName.replace(/_/g, ' ')}`;
-          this.toaster.error(errorMessage, 'Error');
+          this.toaster.warning(errorMessage, 'Error');
         }
       });
 
@@ -64,8 +63,8 @@ export class ContactComponent {
         this.toaster.success('Successfully Data Sent');
       })
       .catch((error) => {
-        this.toaster.error('Error sending data', 'Error');
-        console.error('Error sending data:', error);
+        this.toaster.error("Service disruption. We'll be back soon!");
+        console.error('Servies is out Servies', error);
       });
   }
 

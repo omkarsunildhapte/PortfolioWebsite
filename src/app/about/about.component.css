@@ -1,8 +1,7 @@
-
 .tesl a {
   font-size: 18px;
- }  
- .tesl a:hover{
+}
+.tesl a:hover {
   border-bottom: 4px solid red !important;
 }
 .tesl a:active {
@@ -28,10 +27,11 @@ span {
     padding-left: 0;
     padding-right: 0;
   }
-.mobile-view img{
-  width: 100vw;
-  display: block;
-}
+  .mobile-view img {
+    width: 100vw !important;
+    display: block;
+    margin-bottom: 10px !important;
+  }
   .mobile-view .text-center {
     width: 100%;
     height: auto;

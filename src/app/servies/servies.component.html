@@ -1,158 +1,33 @@
-<div class="header text-center py-4 " id="app-services">
-    <h1 class="fw-bolder m-0" style="font-size: 24px;">Servies</h1>
-</div>
-<div class="container-fluid justify-content-evenly d-flex">
-    <div class="d-flex justify-content-between align-items-center container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fa-solid fa-code px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Web
-                            development</span>
-                        <p class="card-text px-2">Web development is the process of creating and maintaining
-                            websites.
-                            It involves various disciplines such as web design, coding, and server management to deliver
-                            functional and visually appealing online experiences.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fa-solid fa-hashtag px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">UI/UX Design</span>
-                        <p class="card-text px-2">UI/UX design focuses on creating user-friendly interfaces
-                            an enhancing the overall user experience. It involves understanding user needs, conducting
-                            research, and designing intuitive interfaces that effectively communicate and engage users,
-                            resulting in delightful and seamless interactions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fa-solid fa-mobile-screen-button px-3 py-3"
-                                style="font-size: 30px;"></i>
-                        </p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">App
-                            development</span>
-                        <p class="card-text px-2">App development refers to the process of creating mobile
-                            applications
-                            for smartphones, tablets, or other mobile devices. It involves designing, coding, and
-                            testing the app to ensure it meets the desired functionality and user experience, and can be
-                            deployed on various app stores for users to download and use.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid" style="height: 500px;">
+    <div class="header text-center py-4" id="app-services">
+        <h1 class="fw-bolder m-0" style="font-size: 24px;">Services</h1>
     </div>
-</div>
-<div class="container-fluid justify-content-evenly d-flex py-3">
-    <div class="d-flex justify-content-between align-items-center container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-robot px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">AI
-                            development</span>
-                        <p class="card-text px-2">AI development involves creating intelligent systems that
-                            can
-                            perceive, learn, reason, and make decisions similar to human intelligence. It encompasses
-                            machine learning, neural networks, natural language processing, and other techniques to
-                            build applications that can automate tasks, provide insights, and improve decision-making
-                            processes.
-                        </p>
+
+    <div id="service-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <ng-container *ngFor="let group of itemGroups; let i = index">
+                <div class="carousel-item" [class.active]="i === 0">
+                    <div class="container-fluid justify-content-center d-flex">
+                        <div class="row">
+                            <div class="col-md-4" *ngFor="let item of group">
+                                <div class=" text-white p-4 item-container rounded-5">
+                                    <p class="m-0 p-0"><i class="fa-solid {{ item.icon }} px-3 py-2"
+                                            style="font-size: 30px;"></i></p>
+                                    <h2 class="fw-bold mb-2" style="font-size: 20px;">{{ item.title }}</h2>
+                                    <p>{{ item.description }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-brain px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Machine Learning
-                            Development</span>
-                        <p class="card-text px-2">Machine Learning Development involves building algorithms
-                            and models
-                            that enable computers to learn and make predictions or decisions based on data. It involves
-                            data preprocessing, model training, and evaluation to create intelligent systems that can
-                            automatically improve and adapt over time.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-cloud px-3 py-3" style="font-size: 30px;"></i>
-                        </p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Cloud
-                            development</span>
-                        <p class="card-text px-2">Cloud development is the process of creating and deploying
-                            applications, services, and infrastructure on cloud platforms. It involves leveraging cloud
-                            computing resources, such as storage, databases, and computing power, to build scalable,
-                            flexible, and reliable solutions that can be accessed and managed remotely over the
-                            internet.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </ng-container>
         </div>
-    </div>
-</div>
-<div class="container-fluid justify-content-evenly d-flex">
-    <div class="d-flex justify-content-between align-items-center container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-bug px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Testing and
-                            Debugging</span>
-                        <p class="card-text px-2">Testing is an essential phase in software development that
-                            ensures the
-                            quality and reliability of the product. It involves systematically validating and verifying
-                            software functionalities, identifying bugs and issues, and ensuring the software meets the
-                            specified requirements before release.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-server px-3 py-3" style="font-size: 30px;"></i></p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Backend
-                            development</span>
-                        <p class="card-text px-2">Backend development involves creating the server-side logic
-                            and
-                            infrastructure of a website or application. It focuses on handling data, processing
-                            requests, and ensuring smooth functionality behind the scenes, often utilizing technologies
-                            such as databases, APIs, and server frameworks.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card rounded-5 clip py-2 " style="background: #d001f1;height: 300px; ">
-                    <div class="card-body text-white">
-                        <p class="m-0 p-0 "><i class="fas fa-database px-3 py-3" style="font-size: 30px;"></i>
-                        </p>
-                        <span class="d-block px-2 fw-bold mb-2" style="font-size: 20px;">Database
-                            Development</span>
-                        <p class="card-text px-2">Database design and development involve creating efficient
-                            and
-                            structured databases to store and manage data effectively. It includes defining data models,
-                            designing tables, establishing relationships, and implementing data integrity rules to
-                            ensure accurate and secure storage, retrieval, and manipulation of information.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <ul class="carousel-indicators justify-content-end">
+            <li *ngFor="let group of itemGroups; let i = index" [attr.data-bs-target]="'#service-carousel'"
+                [attr.data-bs-slide-to]="i" [class.active]="i === 0">
+                <i class="fas fa-circle fa-lg indicator-icon"></i>
+            </li>
+        </ul>
     </div>
 </div>

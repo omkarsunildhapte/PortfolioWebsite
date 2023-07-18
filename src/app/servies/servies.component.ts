@@ -53,15 +53,21 @@ export class ServiesComponent {
       icon: 'fa-database'
     }
   ];
+
   itemGroups: any[] = [];
 
-  constructor() {
+  ngOnInit() {
     this.groupItems();
+    window.addEventListener('resize', this.groupItems.bind(this));
   }
 
   groupItems() {
-    const groupSize = 3;
-    const totalGroups = Math.ceil(this.items.length / groupSize);
+    const isMobile = window.innerWidth < 768;
+    const groupSize = isMobile ? 1 : 3;
+    const totalItems = isMobile ? this.items.length : Math.ceil(this.items.length / groupSize) * groupSize;
+    const totalGroups = Math.ceil(totalItems / groupSize);
+
+    this.itemGroups = [];
 
     for (let i = 0; i < totalGroups; i++) {
       const startIndex = i * groupSize;
@@ -69,5 +75,13 @@ export class ServiesComponent {
       const group = this.items.slice(startIndex, endIndex);
       this.itemGroups.push(group);
     }
+  }
+
+  isActiveGroup(index: number): boolean {
+    const activeItemIndex = Array.from(document.querySelectorAll('.carousel-item')).findIndex(
+      item => item.classList.contains('active')
+    );
+    const activeGroupIndex = Math.floor(activeItemIndex / 3);
+    return index === activeGroupIndex;
   }
 }

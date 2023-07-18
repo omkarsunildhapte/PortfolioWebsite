@@ -24,11 +24,12 @@
   }
 }
 a {
-  transition: border 1s, color 1s;
+  transition: background-color 1s, color 1s transform 1s;
 }
 a:hover {
-  color: #d61313 !important;
-  border-bottom: 4px solid #d61313;
+  color: #fff !important;
+  background-color: #7525a1;
+  transform: rotate(358deg);
 }
 
 .icon {

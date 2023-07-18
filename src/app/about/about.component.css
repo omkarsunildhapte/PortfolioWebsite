@@ -1,14 +1,17 @@
-.tesl a {
-  font-size: 18px;
+.anima:hover {
+  border-bottom: 4px solid #0bff00 !important;
 }
-.tesl a:hover {
-  border-bottom: 4px solid red !important;
-}
-.tesl a:active {
-  border-bottom: 4px solid red !important;
+.anima:active {
+  border-bottom: 4px solid #0bff00 !important;
 }
 span {
   font-size: 33px;
+}
+.anima {
+  font-size: 18px;
+  color: #0bff00;
+  font-weight: 600;
+  transition: border 0.3s;
 }
 /* Mobile view styles */
 @media (max-width: 767px) {

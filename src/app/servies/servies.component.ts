@@ -62,7 +62,7 @@ export class ServiesComponent {
   }
 
   groupItems() {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 756;
     const groupSize = isMobile ? 1 : 3;
     const totalItems = isMobile ? this.items.length : Math.ceil(this.items.length / groupSize) * groupSize;
     const totalGroups = Math.ceil(totalItems / groupSize);
@@ -81,7 +81,13 @@ export class ServiesComponent {
     const activeItemIndex = Array.from(document.querySelectorAll('.carousel-item')).findIndex(
       item => item.classList.contains('active')
     );
-    const activeGroupIndex = Math.floor(activeItemIndex / 3);
+    if (activeItemIndex === -1) {
+      return false;
+    }
+    const groupSize = window.innerWidth < 756 ? 1 : 3;
+    const activeGroupIndex = Math.floor(activeItemIndex / groupSize);
     return index === activeGroupIndex;
   }
+
+
 }

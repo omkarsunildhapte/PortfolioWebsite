@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent {
-
+  backgroundImageUrl = '../../assets/banner1.jpg';
+  quotes = "Success in future projects lies in building innovative and scalable solutions that meet the needs of the modern world."
 }

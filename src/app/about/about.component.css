@@ -31,8 +31,6 @@ span {
     padding-right: 0;
   }
   .mobile-view img {
-    width: 100vw !important;
-    display: block;
     margin-bottom: 10px !important;
   }
   .mobile-view .text-center {

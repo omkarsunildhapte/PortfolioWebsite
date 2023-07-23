@@ -1,40 +1,23 @@
 <div class="header text-center py-4" id="app-projects">
     <h1 class="fw-bolder m-0" style="font-size: 24px;">Projects</h1>
 </div>
-<div class="container-fluid d-flex justify-content-center py-5 px-5">
-    <div class="card-group">
-        <div class="card mx-2 chip">
-            <img src="../../assets/ATM-project.jpg" class="card-img-top" alt="ATM Application">
-            <div class="card-body">
-                <h5 class="card-title">ATM Application</h5>
-                <p class="card-text">The ATM Application is a software program that enables users to perform various
-                    banking transactions such as cash withdrawals, deposits, balance inquiries, and fund transfers using
-                    automated teller machines.</p>
+<div class="container-fluid d-flex justify-content-center py-5 px-4">
+    <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let group of itemGroups; let i = index"
+            [class.active]="i === activeGroupIndex">
+            <div class="card-group mx-2">
+                <div class="card chip mx-2" *ngFor="let item of group">
+                    <img [src]="item.image" class="card-img-top" [alt]="item.title">
+                    <div class="card-body">
+                        <h2 class="fw-bold mb-2" style="font-size: 20px;">{{ item.title }}</h2>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card mx-2 chip">
-            <img src="../../assets/housePrice.jpg" class="card-img-top" alt="House Price Prediction">
-            <div class="card-body">
-                <h5 class="card-title">House Price Prediction</h5>
-                <p class="card-text">House Price Prediction is a model or algorithm that estimates the value of
-                    residential properties based on various factors.</p>
-            </div>
-        </div>
-        <div class="card mx-2 chip">
-            <img src="../assets/music-website.jpeg" class="card-img-top" alt="LayMusic">
-            <div class="card-body">
-                <h5 class="card-title">LayMusic</h5>
-                <p class="card-text">This is a form of artistic expression that uses sound and rhythm to evoke emotions
-                    and convey messages.</p>
-            </div>
-        </div>
-        <div class="card mx-2 chip">
-            <img src="../../assets/RangRachna.jpg" class="card-img-top" alt="RangRachna">
-            <div class="card-body">
-                <h5 class="card-title">RangRachna</h5>
-                <p class="card-text">RangRachna is a weather forecasting tool that provides accurate weather predictions
-                    and forecasts.</p>
-            </div>
+        <div class="dots-container">
+            <span class="dot mx-2" *ngFor="let group of itemGroups; let i = index"
+                [ngClass]="{'active': isActiveGroup(i)}"></span>
         </div>
     </div>
 </div>

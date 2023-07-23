@@ -16,7 +16,6 @@
 .item-container {
   display: flex;
   flex-direction: column;
-  background-color: #7525a1;
 }
 
 .dots-container {
@@ -41,7 +40,7 @@
 }
 
 .dot.active {
-  background-color: blue;
+  background-color: blue !important;
 }
 .carousel-inner {
   position: relative;
@@ -62,7 +61,8 @@
     margin-bottom: 10px !important;
   }
   .safe-container {
-    height: 300px !important;
+    height: 350px !important;
+    background-color: #7525a1;
   }
 }
 
@@ -70,7 +70,11 @@
   .carousel-inner > .carousel-item:not(.active) {
     display: none;
   }
+  .dot.active {
+    background-color: blue !important;
+  }
   .safe-container {
-    height: 300px !important;
+    height: 350px !important;
+    background-color: #7525a1;
   }
 }

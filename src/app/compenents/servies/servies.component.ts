@@ -12,21 +12,18 @@ export class ServiesComponent {
   itemGroups: any[] = [];
 
   ngOnInit() {
-    this.getProjects()
+    this.getData()
     window.addEventListener('resize', this.groupItems.bind(this));
   }
 
-  getProjects() {
+  getData() {
     const collectionName = 'serives';
-    this.fireData.getProjects(collectionName).subscribe((Projects: any) => {
+    this.fireData.getData(collectionName).subscribe((Projects: any) => {
       this.items = Projects;
       this.groupItems()
     });
   }
   groupItems() {
-    debugger
-    console.log(this.items);
-
     const isMobile = window.innerWidth < 756;
     const groupSize = isMobile ? 1 : 3;
     const totalItems = isMobile ? this.items.length : Math.ceil(this.items.length / groupSize) * groupSize;

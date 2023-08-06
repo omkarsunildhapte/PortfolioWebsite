@@ -11,7 +11,7 @@ export class DataService {
   private projects$!: Observable<any>;
   constructor(private firestore: AngularFirestore) {
   }
-  getProjects(collectionName: string): Observable<any> {
+  getData(collectionName: string): Observable<any> {
     this.itemsCollection = this.firestore.collection<any>(collectionName);
     this.projects$ = this.itemsCollection.valueChanges({ idField: 'id' });
     return this.projects$;

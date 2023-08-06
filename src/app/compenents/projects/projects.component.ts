@@ -13,12 +13,12 @@ export class ProjectsComponent {
   activeGroupIndex: number = 0;
   constructor(private fireData: DataService) { }
   ngOnInit() {
-    this.getProjects();
+    this.getData();
     this.startAutomaticSliding();
   }
-  getProjects() {
+  getData() {
     const collectionName = 'projects';
-    this.fireData.getProjects(collectionName).subscribe((Projects: any) => {
+    this.fireData.getData(collectionName).subscribe((Projects: any) => {
       this.items = Projects;
       this.groupItems();
 

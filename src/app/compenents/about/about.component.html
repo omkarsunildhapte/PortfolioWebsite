@@ -1,18 +1,18 @@
-<div class="container-fluid">
+<div class="container-fluid" id="app-about">
     <div class="header text-center py-4">
         <h1 class="fw-bolder m-0" style="font-size: 24px;">About Me</h1>
     </div>
-    <div class="w-100 h-100 py-3" id="app-about">
+    <div class="w-100 h-100 py-3" *ngFor="let item of items">
         <div class="container-lg d-flex mobile-view">
             <div class="row">
                 <div class="col text-center p-0 m-auto">
-                    <img [src]="profileImageUrl" class="" alt="BANNER IS HERE" style="height:60vh !important;">
+                    <img [src]="item.imageUrl" class="" alt="BANNER IS HERE" style="height:60vh !important;">
                 </div>
                 <div class="col px-3 rounded-5" style="background-color:#67348d96">
                     <div class="row">
                         <div class="d-flex justify-content-center">
                             <p class="py-4 px-4 font-bolder" style="font-size: 18px;">
-                                {{aboutMe}}
+                                {{item.description}}
                             </p>
                         </div>
                         <div class="col">

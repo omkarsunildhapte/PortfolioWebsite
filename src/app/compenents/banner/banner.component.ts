@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/comman/servies/dataStore/data.service';
 
 @Component({
   selector: 'app-banner',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent {
+  items: any;
+  constructor(private firebase: DataService) {
+    this.getData();
+  }
+  getData() {
+    const collectionName = 'mySelf';
+    this.firebase.getData(collectionName).subscribe((Projects: any) => {
+      this.items = Projects;
+    });
+  }
   backgroundImageUrl = '../../assets/banner1.jpg';
-  quotes = "Success in future projects lies in building innovative and scalable solutions that meet the needs of the modern world."
 }

@@ -1,23 +1,16 @@
-<div class="header text-center py-4" id="app-projects">
-    <h1 class="fw-bolder m-0" style="font-size: 24px;">Projects</h1>
-</div>
-<div class="container-fluid d-flex justify-content-center py-5 px-4">
-    <div class="carousel-inner">
-        <div class="carousel-item" *ngFor="let group of itemGroups; let i = index"
-            [class.active]="i === activeGroupIndex">
-            <div class="card-group mx-2">
-                <div class="card chip mx-2" *ngFor="let item of group">
-                    <img [src]="item.imageUrl" class="card-img-top" [alt]="item.projectName">
-                    <div class="card-body">
-                        <h2 class="fw-bold mb-2" style="font-size: 20px;">{{ item.projectName}}</h2>
-                        <p>{{ item.description }}</p>
-                    </div>
+<div class="container-fluid">
+    <div class="header text-center py-4" id="app-projects">
+        <h1 class="fw-bolder m-0" style="font-size: 24px;">Projects</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let item of projectList">
+            <div class="card chip mx-2 h-100">
+                <img [src]="item.imageUrl" class="card-img-top" [alt]="item.projectName">
+                <div class="card-body">
+                    <h2 class="fw-bold mb-2" style="font-size: 20px;">{{ item.projectName}}</h2>
+                    <p>{{ item.description }}</p>
                 </div>
             </div>
-        </div>
-        <div class="dots-container">
-            <span class="dot mx-2" *ngFor="let group of itemGroups; let i = index"
-                [ngClass]="{'active': isActiveGroup(i)}"></span>
         </div>
     </div>
 </div>

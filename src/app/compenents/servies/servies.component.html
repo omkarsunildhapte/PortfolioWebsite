@@ -2,27 +2,13 @@
     <div class="header text-center py-4" id="app-services">
         <h1 class="fw-bolder m-0" style="font-size: 24px;">Services</h1>
     </div>
-
-    <div id="service-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
-        <div class="carousel-inner">
-            <div class="carousel-item" *ngFor="let group of itemGroups; let i = index" [class.active]="i === 0">
-                <div class="container-fluid justify-content-center d-flex">
-                    <div class="row">
-                        <div class="col-md-4 my-3 overflow-hidden safe-container" *ngFor="let item of group">
-                            <div class="text-white px-5 py-3  item-container rounded-5 overflow-hidden safe h-100 ">
-                                <p class="m-0 p-0"><i class="fa-solid {{ item.iconName }} px-3 py-2"
-                                        style="font-size: 30px;"></i></p>
-                                <h2 class="fw-bold mb-2" style="font-size: 20px;">{{ item.serviceName }}</h2>
-                                <p>{{ item.serviceDescription }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-md-4 my-3" *ngFor="let group of serviesList">
+            <div class="text-white px-5 py-3 rounded-5 h-100 service-card">
+                <p class="m-0 p-0"><i class="fa-solid {{group.iconName }} px-3 py-2" style="font-size: 30px;"></i></p>
+                <h2 class="fw-bold mb-2" style="font-size: 20px;">{{group.serviceName }}</h2>
+                <p>{{group.serviceDescription }}</p>
             </div>
         </div>
-
-        <div class="dots-container bg-transparent">
-            <span class="dot mx-2" *ngFor="let group of itemGroups; let i = index"
-                [ngClass]="{'active': isActiveGroup(i)}"></span>
-        </div>
     </div>
+</div>

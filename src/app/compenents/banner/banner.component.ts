@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/comman/servies/dataStore/data.service';
-
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -17,5 +16,4 @@ export class BannerComponent {
       this.items = Projects;
     });
   }
-  backgroundImageUrl = '../../assets/banner1.jpg';
 }

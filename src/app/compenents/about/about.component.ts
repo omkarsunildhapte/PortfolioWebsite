@@ -9,7 +9,6 @@ import { DataService } from 'src/app/comman/servies/dataStore/data.service';
 export class AboutComponent {
   showExperience = true;
   showEducation = false;
-  profileImageUrl = '../../assets/profile.png';
   experience = [
     { date: 'Apr 2023 - Current', details: 'Web Development at Scalar Techhub' },
     { date: 'Jun 2018 - Jul 2018', details: 'UI/UX Development at Extentia Information Technology' }
@@ -26,8 +25,8 @@ export class AboutComponent {
   }
   getData() {
     const collectionName = 'mySelf';
-    this.firebase.getData(collectionName).subscribe((Projects: any) => {
-      this.items = Projects;
+    this.firebase.getData(collectionName).subscribe((mySelf: any) => {
+      this.items = mySelf;
     });
   }
 }

@@ -1,55 +1,6 @@
-.anima:hover {
-  border-bottom: 4px solid #0bff00 !important;
-}
-.anima:active {
-  border-bottom: 4px solid #0bff00 !important;
-}
-span {
-  font-size: 33px;
-}
-.anima {
-  font-size: 18px;
-  color: #0bff00;
-  font-weight: 600;
-  transition: border 0.3s;
-}
-/* Mobile view styles */
-@media (max-width: 767px) {
-  .mobile-view {
-    flex-direction: column;
-  }
-
-  .mobile-view .col-5 {
-    order: 2;
-    width: 100%;
-  }
-
-  .mobile-view .col-7 {
-    order: 1;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .mobile-view img {
-    margin-bottom: 10px !important;
-  }
-  .mobile-view .text-center {
-    width: 100%;
-    height: auto;
-    padding: 0;
-  }
-
-  .mobile-view .list-unstyled {
-    padding: 0;
-  }
-
-  .mobile-view .tesl {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .mobile-view ul li {
-    text-align: center;
-    color: red;
-    font-size: 14px;
-  }
+.main {
+  border: 30px solid black;
+  outline: 3px solid;
+  padding: 0px 10px;
+  background-color: #ec30ba;
 }

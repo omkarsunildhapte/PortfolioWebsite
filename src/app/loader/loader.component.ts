@@ -1,21 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { LoadingService } from '../comman/servies/loading.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
+  standalone: true,
+  imports: [],
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css']
+  styleUrl: './loader.component.scss'
 })
 export class LoaderComponent {
-  @Input() section!: string;
 
-  isLoading: boolean = false;
-
-  constructor(private loadingService: LoadingService) { }
-
-  ngOnInit() {
-    this.loadingService.getLoaderState(this.section).subscribe(isLoading => {
-      this.isLoading = isLoading;
-    });
-  }
 }

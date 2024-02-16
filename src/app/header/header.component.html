@@ -1,0 +1,18 @@
+<div class="mobile-nav-toggle" [ngClass]="{'active': !isMobileNavActive}">
+    <i class="fa" [ngClass]="{ 'fa-bars': isMobileNavActive, 'fa-times-circle': !isMobileNavActive }"
+        (click)="toggleMobileNav()"></i>
+</div>
+
+<header class=" header d-flex flex-column justify-content-center"
+    [ngStyle]="{ 'left.px': isMobileNavActive ? -3000 : 0 }">
+    <nav class="navbar nav-menu">
+        <ul>
+            <li *ngFor="let item of menuItems">
+                <a class="nav-link scrollto">
+                    <i class="fa " [ngClass]="item.icon"></i>
+                    <span>{{ item.title }}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

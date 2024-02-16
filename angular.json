@@ -3,33 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio": {
+    "portfilio": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "www",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
-              "node_modules/font-awesome/css/font-awesome.min.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -37,23 +45,20 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "3mb"
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "3mb"
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -62,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "portfolio:build:production"
+              "buildTarget": "portfilio:build:production"
             },
             "development": {
-              "browserTarget": "portfolio:build:development"
+              "buildTarget": "portfilio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio:build"
+            "buildTarget": "portfilio:build"
           }
         },
         "test": {
@@ -84,13 +89,14 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           }
@@ -99,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "79cbd721-4d34-4aae-bb23-934c2ae26ddd"
   }
 }

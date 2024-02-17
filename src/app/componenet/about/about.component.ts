@@ -1,6 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { FirebseDataService } from '../../servies/firebase-servies/firebse-data.service';
+import { Component, inject } from '@angular/core';
 import { Profile } from '../../../interfaces/profile.interface';
+import { FirebseDataService } from '../../servies/firebase-servies/firebse-data.service';
 
 @Component({
   selector: 'app-about',
@@ -10,7 +10,7 @@ import { Profile } from '../../../interfaces/profile.interface';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   mySelf: Profile = {
     titles: [],
     email: '',
@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
     aboutImage: '',
   };
   firebseDataService = inject(FirebseDataService)
-  ngOnInit(): void {
+  constructor() {
     this.firebseDataService.getmySelfCollection().subscribe((res: any) => {
       this.mySelf = res[0]
     })

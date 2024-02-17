@@ -15,7 +15,6 @@ export class SkillComponent {
   skills: { skillname: string, percentage: number }[] = []
   constructor(private firebaseServies: FirebseDataService) {
     firebaseServies.getmySkillsCollection().subscribe((res: any) => {
-      debugger
       this.skills = res
     })
   }

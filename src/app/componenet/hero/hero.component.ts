@@ -37,16 +37,16 @@ export class HeroComponent {
   ngOnInit(): void {
     this.firebaseDataService.getmySelfCollection().subscribe((res: any) => {
       this.myself = res[0]
+      this.type();
     })
-    this.type();
   }
 
   type() {
-    if (this.currentIndex === this.myself?.titles.length) {
+    if (this.currentIndex === this.myself.titles.length) {
       // this.currentIndex = 0
     };
-    if (this.currentCharIndex < this.myself?.titles[this.currentIndex].length) {
-      this.currentText += this.myself?.titles[this.currentIndex].charAt(this.currentCharIndex);
+    if (this.currentCharIndex < this.myself.titles[this.currentIndex].length) {
+      this.currentText += this.myself.titles[this.currentIndex].charAt(this.currentCharIndex);
       this.currentCharIndex++;
       setTimeout(() => this.type(), 100);
     } else {

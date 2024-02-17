@@ -96,10 +96,28 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "portfilio:build:production",
+              "serveTarget": "portfilio:serve:production"
+            },
+            "development": {
+              "buildTarget": "portfilio:build:development",
+              "serveTarget": "portfilio:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

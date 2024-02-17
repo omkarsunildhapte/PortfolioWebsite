@@ -4,22 +4,25 @@
             <h2>Testimonials</h2>
         </div>
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonials-slider" #testimonialsSlider>
             <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let testimonial of testimonials">
-                    <div class="testimonial-item">
+                <div class="swiper-slide" *ngFor="let testimonial of testimonials; let i = index">
+                    <div class="testimonial-item" [ngClass]="{ active: i === currentSlide }">
                         <img [src]="testimonial.image" class="testimonial-img" alt="">
                         <h3>{{ testimonial.name }}</h3>
                         <h4>{{ testimonial.position }}</h4>
                         <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            <i class="fa fa-quote-left quote-icon-left"></i>
                             {{ testimonial.quote }}
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            <i class="fa fa-quote-right quote-icon-right"></i>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="dots">
+                <span class="dot" *ngFor="let testimonial of testimonials; let i = index"
+                    [ngClass]="{ active: i === currentSlide }" (click)="jumpToSlide(i)"></span>
+            </div>
         </div>
     </div>
 </section>

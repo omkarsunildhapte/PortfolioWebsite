@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "omkar-dhapte-developer"
+  },
+  "targets": {
+    "omkar-dhapte-developer": {
+      "hosting": {
+        "portfilio": [
+          "omkar-dhapte-developer"
+        ]
+      }
+    }
   }
 }

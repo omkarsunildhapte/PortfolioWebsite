@@ -12,7 +12,24 @@ import { Profile } from '../../../interfaces/profile.interface';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  myself!: Profile;
+  myself: Profile = {
+    titles: [],
+    email: '',
+    phone: 0,
+    mainTitle: '',
+    freelanceStatus: '',
+    degree: '',
+    name: '',
+    birthday: {
+      seconds: 0,
+      nanoseconds: 0,
+    },
+    aboutText: '',
+    city: '',
+    ondes: '',
+    aboutsummary: '',
+    aboutImage: '',
+  };
   currentIndex: number = 0;
   currentText: string = '';
   currentCharIndex: number = 0;

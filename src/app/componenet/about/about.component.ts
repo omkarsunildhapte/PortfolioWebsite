@@ -11,7 +11,24 @@ import { Profile } from '../../../interfaces/profile.interface';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent implements OnInit {
-  mySelf!: Profile
+  mySelf: Profile = {
+    titles: [],
+    email: '',
+    phone: 0,
+    mainTitle: '',
+    freelanceStatus: '',
+    degree: '',
+    name: '',
+    birthday: {
+      seconds: 0,
+      nanoseconds: 0,
+    },
+    aboutText: '',
+    city: '',
+    ondes: '',
+    aboutsummary: '',
+    aboutImage: '',
+  };
   firebseDataService = inject(FirebseDataService)
   ngOnInit(): void {
     this.firebseDataService.getmySelfCollection().subscribe((res: any) => {

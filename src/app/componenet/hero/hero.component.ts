@@ -14,25 +14,26 @@ import { Profile } from '../../../interfaces/profile.interface';
 export class HeroComponent {
   myself: Profile = {
     titles: [],
-    email: '',
-    phone: 0,
-    mainTitle: '',
-    freelanceStatus: '',
-    degree: '',
+    profileImages: "",
+    bannerImages: "",
     name: '',
-    birthday: {
+    email: '',
+    birthDay: {
       seconds: 0,
       nanoseconds: 0,
     },
-    aboutInformation: '',
+    phoneNumber: 0,
     city: '',
-    quotes: '',
-    summary: '',
-    profileImages: '',
-    bannerImages: '',
     state: '',
     country: '',
-    jobStatus: ''
+    freelanceStatus: '',
+    jobStatus: '',
+    mainRoles: '',
+    degree: '',
+    aboutInformation: '',
+    quotes: '',
+    summary: '',
+    id: '',
   };
   currentIndex: number = 0;
   currentText: string = '';

@@ -10,6 +10,7 @@ export class FirebseDataService {
   private mySelfCollection = collection(this.firestore, 'mySelf');
   private myfactsCollection = collection(this.firestore, 'myfacts');
   private myskillssCollection = collection(this.firestore, 'myskills');
+  private myEducationCollection = collection(this.firestore, 'myEdcation');
   getmySelfCollection() {
     return collectionData(this.mySelfCollection, { idField: 'id' }) as Observable<any>
   }
@@ -18,5 +19,8 @@ export class FirebseDataService {
   }
   getmySkillsCollection() {
     return collectionData(this.myskillssCollection) as Observable<any>
+  }
+  getMyEducationCollection() {
+    return collectionData(this.myEducationCollection) as Observable<any>
   }
 }

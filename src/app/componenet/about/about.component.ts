@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Profile } from '../../../interfaces/profile.interface';
 import { FirebseDataService } from '../../servies/firebase-servies/firebse-data.service';
 
@@ -10,37 +10,38 @@ import { FirebseDataService } from '../../servies/firebase-servies/firebse-data.
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
-  mySelf: Profile = {
+export class AboutComponent implements OnInit {
+  myselfData: Profile = {
     titles: [],
-    email: '',
-    phone: 0,
-    mainTitle: '',
-    freelanceStatus: '',
-    degree: '',
+    profileImages: "",
+    bannerImages: "",
     name: '',
-    birthday: {
+    email: '',
+    birthDay: {
       seconds: 0,
       nanoseconds: 0,
     },
-    aboutInformation: '',
+    phoneNumber: 0,
     city: '',
-    quotes: '',
-    summary: '',
-    profileImages: '',
-    bannerImages: '',
     state: '',
     country: '',
-    jobStatus: ''
+    freelanceStatus: '',
+    jobStatus: '',
+    mainRoles: '',
+    degree: '',
+    aboutInformation: '',
+    quotes: '',
+    summary: '',
+    id: '',
   };
   firebseDataService = inject(FirebseDataService)
-  constructor() {
+  ngOnInit(): void {
     this.firebseDataService.getmySelfCollection().subscribe((res: any) => {
-      this.mySelf = res[0]
+      this.myselfData = res[0]
     })
   }
   getAge(birth: any): string {
-    const birthDate = birth.toDate();
+    const birthDate = new Date(birth);
     const currentDate = new Date();
     const age = currentDate.getFullYear() - birthDate.getFullYear();
     if (
@@ -51,8 +52,5 @@ export class AboutComponent {
     } else {
       return age.toString();
     }
-  }
-  getBrith(brith: any): string {
-    return brith.toDate().toLocaleDateString('en-GB')
   }
 }

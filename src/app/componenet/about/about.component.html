@@ -2,33 +2,34 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>About</h2>
-            <p>{{mySelf.aboutInformation}}</p>
+            <p>{{myselfData.aboutInformation}}</p>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <img [src]='mySelf.profileImages' class="img-fluid w-100" style="height: 455px;" alt="Profile Picture">
+                <img [src]='myselfData.profileImages' class="img-fluid w-100" style="height: 455px;"
+                    alt="Profile Picture">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h3>{{mySelf.mainTitle}}</h3>
-                <p class="fst-italic">{{mySelf.summary}}</p>
+                <h3>{{myselfData.mainRoles}}</h3>
+                <p class="fst-italic">{{myselfData.summary}}</p>
                 <div class="row">
                     <div class="col-lg-6">
                         <ul>
-                            <li><strong>Birthday:</strong> <span>{{getBrith(mySelf.birthday)}}</span></li>
-                            <li><strong>Phone:</strong> <span>{{mySelf.phone}}</span></li>
-                            <li><strong>City:</strong> <span>{{mySelf.city}}</span></li>
+                            <li><strong>Birthday:</strong> <span>{{myselfData.birthDay}}</span></li>
+                            <li><strong>Phone:</strong> <span>{{myselfData.phoneNumber}}</span></li>
+                            <li><strong>City:</strong> <span>{{myselfData.city}}</span></li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <ul>
-                            <li><strong>Age:</strong> <span>{{getAge(mySelf.birthday)}}</span></li>
-                            <li><strong>Degree:</strong> <span>{{mySelf.degree}}</span></li>
-                            <li><strong>Email:</strong> <span>{{mySelf.email}}</span></li>
-                            <li><strong>Freelance:</strong> <span>{{mySelf.freelanceStatus}}</span></li>
+                            <li><strong>Age:</strong> <span>{{getAge(myselfData.birthDay)}}</span></li>
+                            <li><strong>Degree:</strong> <span>{{myselfData.degree}}</span></li>
+                            <li><strong>Email:</strong> <span>{{myselfData.email}}</span></li>
+                            <li><strong>Freelance:</strong> <span>{{myselfData.freelanceStatus}}</span></li>
                         </ul>
                     </div>
                 </div>
-                <p>{{mySelf.aboutInformation}}</p>
+                <p>{{myselfData.aboutInformation}}</p>
             </div>
         </div>
     </div>

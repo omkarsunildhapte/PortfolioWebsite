@@ -4,21 +4,22 @@ export interface Profile {
     bannerImages: string;
     name: string;
     email: string;
-    birthday: {
+    birthDay: {
         seconds: number;
         nanoseconds: number;
     };
-    phone: number;
+    phoneNumber: number;
     city: string;
     state: string;
     country: string;
     freelanceStatus: string;
     jobStatus: string;
-    mainTitle: string;
+    mainRoles: string;
     degree: string;
     aboutInformation: string;
     summary: string;
     quotes: string;
+    id: string;
 }
 
 export interface Facts {

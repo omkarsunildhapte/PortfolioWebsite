@@ -23,11 +23,15 @@ export class AboutComponent {
       seconds: 0,
       nanoseconds: 0,
     },
-    aboutText: '',
+    aboutInformation: '',
     city: '',
-    ondes: '',
-    aboutsummary: '',
-    aboutImage: '',
+    quotes: '',
+    summary: '',
+    profileImages: '',
+    bannerImages: '',
+    state: '',
+    country: '',
+    jobStatus: ''
   };
   firebseDataService = inject(FirebseDataService)
   constructor() {

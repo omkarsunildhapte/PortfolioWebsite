@@ -11,7 +11,7 @@ export class FirebseDataService {
   private myfactsCollection = collection(this.firestore, 'myfacts');
   private myskillssCollection = collection(this.firestore, 'myskills');
   getmySelfCollection() {
-    return collectionData(this.mySelfCollection) as Observable<any>
+    return collectionData(this.mySelfCollection, { idField: 'id' }) as Observable<any>
   }
   getmyFactCollection() {
     return collectionData(this.myfactsCollection) as Observable<any>

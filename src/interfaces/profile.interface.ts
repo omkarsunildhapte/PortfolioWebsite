@@ -1,20 +1,24 @@
 export interface Profile {
     titles: string[];
-    email: string;
-    phone: number;
-    mainTitle: string;
-    freelanceStatus: string;
-    degree: string;
+    profileImages: string;
+    bannerImages: string;
     name: string;
+    email: string;
     birthday: {
         seconds: number;
         nanoseconds: number;
     };
-    aboutText: string;
+    phone: number;
     city: string;
-    ondes: string;
-    aboutsummary: string;
-    aboutImage: string;
+    state: string;
+    country: string;
+    freelanceStatus: string;
+    jobStatus: string;
+    mainTitle: string;
+    degree: string;
+    aboutInformation: string;
+    summary: string;
+    quotes: string;
 }
 
 export interface Facts {

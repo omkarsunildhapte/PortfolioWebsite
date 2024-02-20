@@ -40,12 +40,18 @@ export class ResumeComponent implements OnInit {
     summary: '',
     id: '',
   };
+  experienceData: any;
   ngOnInit(): void {
     this.firebseDataService.getmySelfCollection().subscribe((res: any) => {
       this.myselfData = res[0]
     })
     this.firebseDataService.getMyEducationCollection().subscribe((res: any) => {
       this.educationData = res
+      this.educationData = this.educationData.sort((a: any, b: any) => new Date(b.endYear).getTime() - new Date(a.endYear).getTime());
+    })
+    this.firebseDataService.getMyExperienceCollection().subscribe((res: any) => {
+      this.experienceData = res
+      this.experienceData = this.experienceData.sort((a: any, b: any) => new Date(b.endYear).getTime() - new Date(a.endYear).getTime());
     })
   }
 }

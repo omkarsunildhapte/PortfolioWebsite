@@ -1,10 +1,10 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -17,8 +17,10 @@ export class HeaderComponent {
     { link: '/resume', icon: 'fa fa-file-o', title: 'Resume' },
     { link: '/portfolio', icon: 'fa fa-book', title: 'Portfolio' },
     { link: '/services', icon: 'fa fa-server', title: 'Services' },
-    { link: '/contact', icon: 'fa fa-envelope', title: 'Contact' }
+    { link: '/contact', icon: 'fa fa-envelope', title: 'Contact' },
+    { link: '/login', icon: 'fa fa-envelope', title: 'login' }
   ];
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.detectScreenWidth();
   }

@@ -156,10 +156,10 @@ export class PlatformComponent implements OnInit {
 
   animateCountBoxes(): void {
     if (this.facts) {
-      this.incEltNbr("nbr", this.facts.noHappyClient);
-      this.incEltNbr("nbr1", this.facts.noProject);
-      this.incEltNbr("nbr2", this.facts.noSupport);
-      this.incEltNbr("nbr3", this.facts.noaward);
+      // this.incEltNbr("nbr", this.facts.noHappyClient);
+      // this.incEltNbr("nbr1", this.facts.noProject);
+      // this.incEltNbr("nbr2", this.facts.noSupport);
+      // this.incEltNbr("nbr3", this.facts.noaward);
     }
   }
 

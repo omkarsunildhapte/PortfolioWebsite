@@ -17,16 +17,17 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
   providers:[DatePipe]
 })
 export class PlatformComponent implements OnInit {
+  firebaseDataService= inject(FirebseDataService)
+  renderer= inject(Renderer2)
+  elementRef= inject(ElementRef)
   myself: Profile = new Profile();
   currentIndex = 0;
   currentText = '';
   currentCharIndex = 0;
   skills: { skillname: string, percentage: number }[] = [];
   educationData: EducationInfo[] = [];
-  experienceData: any;
-  firebaseDataService= inject(FirebseDataService)
-  renderer= inject(Renderer2)
-  elementRef= inject(ElementRef)
+  experienceData: any[]=[];
+  testimonials: any[]= [];
   speed = 50;
   facts!: Facts;
   private hasAnimated = false;
@@ -67,21 +68,6 @@ export class PlatformComponent implements OnInit {
   currentSlide = 0;
   animationSpeed = 5000;
   intervalId: any;
-
-  testimonials = [
-    {
-      name: 'Saul Goodman',
-      position: 'Ceo & Founder',
-      image: '../../assets/img/testimonials/testimonials-1.jpg',
-      quote: 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.'
-    },
-    {
-      name: 'Sara Wilsson',
-      position: 'Designer',
-      image: '../../assets/img/testimonials/testimonials-2.jpg',
-      quote: 'Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.'
-    },
-  ];
   ngOnInit(): void {
     this.firebaseDataService.getmySelfCollection().subscribe((res: any) => {
       this.myself = res[0];
@@ -102,6 +88,9 @@ export class PlatformComponent implements OnInit {
     this.firebaseDataService.getMyExperienceCollection().subscribe((res: any) => {
       this.experienceData = res
       this.experienceData = this.experienceData.sort((a: any, b: any) => new Date(b.endYear).getTime() - new Date(a.endYear).getTime());
+    });
+    this.firebaseDataService.getMyTestimonialsCollection().subscribe((res: any) => {
+      this.testimonials = res;
     });
   }
 

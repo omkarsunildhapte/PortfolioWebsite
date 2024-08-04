@@ -425,6 +425,7 @@
         }
     }
 }
+
 .testimonials {
     .section-header {
         margin-bottom: 40px;
@@ -432,7 +433,7 @@
 
     .testimonials-carousel,
     .testimonials-slider {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .testimonial-item {
@@ -531,6 +532,9 @@
             &.active {
                 opacity: 1;
             }
+            p{
+                padding: 21px 0px;
+            }
         }
 
         .dots {
@@ -555,6 +559,7 @@
         }
     }
 }
+
 .contact .info {
     width: 100%;
     background: #fff;

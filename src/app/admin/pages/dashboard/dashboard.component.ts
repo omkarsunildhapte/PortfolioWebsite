@@ -1,13 +1,31 @@
 import { Component } from '@angular/core';
 import { IChartProps } from '../../interface/iChartProps.interface';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { IUser } from '../../interface/user.interface';
 import { DashboardChartsData } from './dashboard-charts-data';
+import { CommonModule } from '@angular/common';
+import { AvatarModule, ButtonGroupModule, ButtonModule, CardModule, FormModule, GridModule, NavModule, ProgressModule, TableModule, TabsModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
+import { ChartjsModule } from '@coreui/angular-chartjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
+  standalone:true,
+  imports:[CommonModule,CardModule,
+    NavModule,
+    IconModule,
+    TabsModule,
+    GridModule,
+    ProgressModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    FormModule,
+    ButtonGroupModule,
+    ChartjsModule,
+    AvatarModule,
+    TableModule,]
 })
 export class DashboardComponent {
   constructor(private chartsData: DashboardChartsData) {

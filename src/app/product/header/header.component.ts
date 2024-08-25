@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,9 @@ import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  isMobileNavActive: boolean = false;
-  mainstart: boolean = false;
+export class HeaderComponent implements OnInit {
+  isMobileScreen: boolean = false;
+  private platformId = inject(PLATFORM_ID);
   menuItems = [
     { link: '/home', icon: 'fa fa-home', title: 'Home' },
     { link: '/about', icon: 'fa fa-user-o', title: 'About' },
@@ -21,8 +21,8 @@ export class HeaderComponent {
     { link: '/login', icon: 'fa fa-envelope', title: 'login' }
   ];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.detectScreenWidth();
+  ngOnInit(): void {
+    this.detectScreenWidth(); 
   }
 
   @HostListener('window:resize')
@@ -31,13 +31,12 @@ export class HeaderComponent {
   }
 
   toggleMobileNav(): void {
-    this.isMobileNavActive = !this.isMobileNavActive;
-    this.mainstart = !this.mainstart;
+    this.isMobileScreen = !this.isMobileScreen;
   }
 
   private detectScreenWidth(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.mainstart = window.innerWidth <= 991;
+      this.isMobileScreen = window.innerWidth <= 991 ? false: true;
     }
   }
 }

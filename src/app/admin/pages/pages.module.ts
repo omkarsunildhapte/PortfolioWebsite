@@ -5,7 +5,6 @@ import { AvatarModule, BadgeModule, BreadcrumbModule, ButtonGroupModule, ButtonM
 import { IconModule } from '@coreui/icons-angular';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { CommanPagesComponent } from './comman-componenet/comman-pages/comman-pages.component';
-import { PagesRoutingModule } from './pages-routing.module';
 import { CommanPagesHeaderComponent } from './comman-componenet/comman-pages-header/comman-pages-header.component';
 import { CommanPagesFooterComponent } from './comman-componenet/comman-pages-footer/comman-pages-footer.component';
 
@@ -14,7 +13,6 @@ import { CommanPagesFooterComponent } from './comman-componenet/comman-pages-foo
   declarations: [CommanPagesComponent, CommanPagesHeaderComponent, CommanPagesFooterComponent],
   imports: [
     CommonModule,
-    PagesRoutingModule,
     AvatarModule,
     BreadcrumbModule,
     FooterModule,

@@ -3,10 +3,10 @@ import { Component, ElementRef, HostListener, inject, OnInit, Renderer2, ViewChi
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { EducationInfo } from '../../../interfaces/education.interface';
 import { Facts, Profile } from '../../../interfaces/profile.interface';
-import { FirebseDataService } from '../../servies/firebase-servies/firebse-data.service';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { FirebseDataService } from '../../servies/firebse-data.service';
 
 @Component({
   selector: 'app-platform',

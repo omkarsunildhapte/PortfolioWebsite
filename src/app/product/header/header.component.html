@@ -1,10 +1,10 @@
-<div class="mobile-nav-toggle" [class.active]="isMobileNavActive">
-    <i class="fa" [class.fa-times-circle]="isMobileNavActive" [class.fa-bars]="!isMobileNavActive"
+<div class="mobile-nav-toggle" [class.active]="isMobileScreen">
+    <i class="fa" [class.fa-times-circle]="isMobileScreen" [class.fa-bars]="!isMobileScreen"
         (click)="toggleMobileNav()"></i>
 </div>
-
+{{isMobileScreen}}
 <header class="header d-flex flex-column justify-content-center"
-    [style.left.px]="isMobileNavActive ?  0:-3000" >
+    [style.left.px]="isMobileScreen ?  0:-3000" >
     <nav class="navbar nav-menu">
         <ul>
             @for(item of menuItems;track item){

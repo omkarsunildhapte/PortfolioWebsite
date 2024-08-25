@@ -1,6 +1,12 @@
 import { Routes } from '@angular/router';
-import { PlatformComponent } from './componenet/platform/platform.component';
 
 export const routes: Routes = [
-    { path: "",component: PlatformComponent}
+    {
+        path: '', 
+        loadComponent: () => import('./product/platform/platform.component').then(m => m.PlatformComponent)
+    },
+    // {
+    //     path: 'platform',
+    //     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    // }
 ];

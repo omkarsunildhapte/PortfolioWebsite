@@ -1,0 +1,36 @@
+/* SCSS Code */
+.about {
+    .content {
+        h3 {
+            font-weight: 700;
+            font-size: 26px;
+            color: #728394;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+
+                strong {
+                    margin-right: 10px;
+                }
+
+                i {
+                    font-size: 16px;
+                    margin-right: 5px;
+                    color: #0563bb;
+                    line-height: 0;
+                }
+            }
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

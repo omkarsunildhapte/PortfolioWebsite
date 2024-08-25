@@ -1,20 +1,21 @@
-<div class="mobile-nav-toggle" [class.active]="isMobileScreen">
+<div class="mobile-nav-toggle fixed right-2.5 top-2.5 z-[9998] border-0 bg-transparent text-2xl transition-all duration-400 outline-none cursor-pointer rounded-full p-1.5"
+    [class.active]="isMobileScreen">
     <i class="fa" [class.fa-times-circle]="isMobileScreen" [class.fa-bars]="!isMobileScreen"
         (click)="toggleMobileNav()"></i>
 </div>
-{{isMobileScreen}}
-<header class="header d-flex flex-column justify-content-center"
-    [style.left.px]="isMobileScreen ?  0:-3000" >
-    <nav class="navbar nav-menu">
-        <ul>
-            @for(item of menuItems;track item){
-            <li>
-                <a class="nav-link scrollto">
-                    <i class="fa" [class]="item.icon"></i>
-                        <span>{{ item.title }}</span>
-                </a>
-            </li>
+<header
+    class="fixed top-[100px] left-[10px] bottom-0 z-[9997] transition-left duration-500 p-4 overflow-y-auto bg-transparent">
+    <ul class="p-0">
+        @for(item of menuItems;track item){
+        <li class="relative whitespace-nowrap">
+            <a
+                class="flex gap-2 items-center text-[#45505b] p-6 mb-2 transition-colors duration-300 text-base rounded-full bg-[#f2f3f5] h-[39px] overflow-hidden hover:text-white hover:bg-[#0563bb] active:text-white active:bg-[#0563bb]">
+                <i class="fa text-xl" [class]="item.icon"></i>
+                @if(isMobileScreen==false){
+                <span>{{ item.title }}</span>
+                }
+            </a>
+        </li>
         }
-        </ul>
-    </nav>
+    </ul>
 </header>

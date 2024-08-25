@@ -12,13 +12,13 @@ export class HeaderComponent implements OnInit {
   isMobileScreen: boolean = false;
   private platformId = inject(PLATFORM_ID);
   menuItems = [
-    { link: '/home', icon: 'fa fa-home', title: 'Home' },
-    { link: '/about', icon: 'fa fa-user-o', title: 'About' },
-    { link: '/resume', icon: 'fa fa-file-o', title: 'Resume' },
-    { link: '/portfolio', icon: 'fa fa-book', title: 'Portfolio' },
-    { link: '/services', icon: 'fa fa-server', title: 'Services' },
-    { link: '/contact', icon: 'fa fa-envelope', title: 'Contact' },
-    { link: '/login', icon: 'fa fa-envelope', title: 'login' }
+    { link: '/home', icon: 'fa-home', title: 'Home' },
+    { link: '/about', icon: 'fa-user-o', title: 'About' },
+    { link: '/resume', icon: 'fa-file-o', title: 'Resume' },
+    { link: '/portfolio', icon: 'fa-book', title: 'Portfolio' },
+    { link: '/services', icon: 'fa-server', title: 'Services' },
+    { link: '/contact', icon: 'fa-envelope', title: 'Contact' },
+    { link: '/login', icon: 'fa-envelope', title: 'login' }
   ];
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   private detectScreenWidth(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.isMobileScreen = window.innerWidth <= 991 ? false: true;
+      this.isMobileScreen = window.innerWidth <= 991 ? false : true;
     }
   }
 }
